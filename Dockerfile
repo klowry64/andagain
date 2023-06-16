@@ -16,7 +16,7 @@ RUN if [ "$(uname -m)" = "ppc64le" ]; then \
     fi
 
 # Copy the controller-manager into a thin image
-FROM ubuntu:latest
+FROM ubuntu:kinetic
 WORKDIR /
 COPY --from=builder /go/src/github.com/kubeflow/kfserving/manager .
 ENTRYPOINT ["/manager"]
