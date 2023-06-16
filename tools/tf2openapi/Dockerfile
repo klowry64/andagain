@@ -11,7 +11,7 @@ COPY pkg/    pkg/
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o tf2openapi ./tools/tf2openapi/cmd
 
 # Copy tf2openapi into a thin image
-FROM ubuntu:latest
+FROM ubuntu:kinetic
 WORKDIR /
 COPY --from=builder /go/src/github.com/kubeflow/kfserving/tf2openapi .
 ENTRYPOINT ["/tf2openapi"]
