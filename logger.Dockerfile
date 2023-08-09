@@ -10,7 +10,7 @@ COPY vendor/ vendor/
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o logger ./cmd/logger
 
 # Copy the inference-logger into a thin image
-FROM alpine:latest
+FROM alpine:3.18.3
 WORKDIR /
 COPY --from=builder /go/src/github.com/kubeflow/kfserving/logger .
 ENTRYPOINT ["/logger"]
