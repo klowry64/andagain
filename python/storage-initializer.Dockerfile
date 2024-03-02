@@ -1,4 +1,4 @@
-FROM python:3.7-slim
+FROM python:3.13.0a3-slim
 
 COPY ./kfserving ./kfserving
 RUN pip install --upgrade pip && pip install ./kfserving
