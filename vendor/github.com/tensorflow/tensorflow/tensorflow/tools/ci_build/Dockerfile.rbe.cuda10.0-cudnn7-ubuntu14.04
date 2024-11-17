@@ -3,7 +3,7 @@
 #       --tag "gcr.io/asci-toolchain/nosla-cuda10.0-cudnn7-ubuntu14.04" .
 # $ docker push gcr.io/asci-toolchain/nosla-cuda10.0-cudnn7-ubuntu14.04
 
-FROM ubuntu:14.04
+FROM ubuntu:trusty-20190425
 LABEL maintainer="Manuel Klimek <klimek@google.com>"
 
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates apt-transport-https gnupg-curl && \
