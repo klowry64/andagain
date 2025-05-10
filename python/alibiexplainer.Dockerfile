@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:latest
 
 COPY . .
 RUN pip install --upgrade pip && pip install -e ./kfserving
